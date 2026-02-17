@@ -1,0 +1,479 @@
+/* ==========================================================================
+   1. VARIABILI E BASI (FONT BILANCIATI)
+   ========================================================================== */
+:root {
+  --primary: #e2c81e;
+  --black: #ffffff;
+  --dark-gray: #0e0e0e;
+  --white: #0e0e0e;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  font-size: 18px; /* Dimensione standard professionale */
+}
+
+a {
+  color: var(--white) !important;
+  text-decoration: none !important;
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--primary) !important;
+}
+
+/* ==========================================================================
+   2. HEADER & MENU
+   ========================================================================== */
+header {
+  background: var(--black);
+  padding: 30px 20px; /* Ridotto da 50px */
+  text-align: center;
+  border-bottom: 3px solid var(--primary);
+  position: relative;
+}
+
+.logo {
+  width: 250px; /* Ridotto da 400px */
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 2.2rem; /* Ridotto da 3.5rem */
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 35px;
+  height: 4px;
+  background: var(--white);
+  margin-bottom: 6px;
+  border-radius: 2px;
+}
+
+/* NAV MENU */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100%;
+  background: rgba(14, 14, 14, 0.98);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 25px;
+  transition: 0.4s;
+  border-left: 2px solid var(--primary);
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu a {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   3. HERO & CARDS
+   ========================================================================== */
+.hero {
+  position: relative; /* Fondamentale: i figli assoluti si riferiscono a questo contenitore */
+  height: 450px; /* Ridotto da 600px */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.hero h2 {
+  font-size: 3rem; /* Ridotto da 4.5rem */
+  font-weight: 900;
+}
+
+.servizi-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 50px auto 50px;
+  padding: 0 20px;
+}
+
+.servizio-card {
+  background: var(--primary);
+  color: var(--black);
+  padding: 35px 25px;
+  border-radius: 15px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.servizio-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   4. SEZIONI CONTENUTO
+   ========================================================================== */
+.hero-image-servizi {
+  height: 140px; /* Più sottile */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  border-left: 8px solid var(--primary);
+}
+
+/* Modifica il selettore h2 esistente così */
+h2 {
+  font-size: 2.2rem;
+  border-left: 10px solid var(--primary);
+  padding-left: 20px;
+  margin-bottom: 30px;
+  text-align: left; /* Forza l'allineamento a sinistra */
+}
+
+.info-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 50px;
+  padding: 0 20px;
+}
+
+.contatti-list li {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.icon-circle {
+  background: var(--primary);
+  color: var(--black);
+  width: 55px; /* Ridotto da 75px */
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 1.4rem;
+}
+/* Contenitore principale per dare respiro */
+.info-section-full {
+ max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px; /* Questo deve essere identico per entrambi */
+  box-sizing: border-box;/
+}
+
+.storia-centrata {
+  margin-bottom: 100px;
+  line-height: 1.8; /* Aumenta l'interlinea per leggere meglio */
+}
+
+.storia-centrata p {
+  margin-bottom: 20px; /* Distanzia i paragrafi tra loro */
+}
+.titolo-servizi-centrato {
+  max-width: 1200px;
+  margin: 60px 0 30px 0; /* Rimosso 'auto', messo 0 a sinistra */
+  padding: 0;
+  text-align: left;
+  /* Il bordo è già gestito dall'h2 generico, non serve qui */
+}
+
+/* TABELLA ORARI */
+table {
+  width: 100%;
+  background: var(--black);
+  border-radius: 12px;
+}
+th {
+  padding: 20px;
+  font-size: 1.2rem;
+  text-align: center; /* AGGIUNTO: centra l'intestazione */
+}
+td {
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  text-align: center; /* AGGIUNTO: centra l'intestazione */
+}
+
+footer {
+  padding: 50px 20px;
+  border-top: 5px solid var(--primary);
+}
+.valori-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Elemento della lista (il singolo valore) */
+.valori-grid li {
+  display: flex;
+  align-items: center; /* Allinea verticalmente icona e testo */
+  justify-content: center;
+  min-width: 150px; /* Evita che vadano troppo vicini */
+  margin-bottom: 0 !important; /* Sovrascrive il margine della contatti-list standard */
+}
+
+/* Il cerchietto con l'icona */
+.valori-grid .icon-circle {
+  flex-shrink: 0; /* IMPEDISCE al cerchio di schiacciarsi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  background: var(--primary);
+  color: var(--black);
+  border-radius: 50%;
+  margin-right: 15px; /* Spazio costante tra cerchio e testo */
+  font-size: 1.4rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column; /* Mette gli elementi uno sotto l'altro */
+    align-items: center;
+    padding: 15px 5px;
+    height: auto !important; /* Toglie l'altezza fissa che taglia i bottoni */
+  }
+  .valori-grid {
+    gap: 20px;
+  }
+  .valori-grid li {
+    width: 100%; /* In mobile molto stretto, li mette uno sotto l'altro */
+    justify-content: flex-start; /* Li allinea a sinistra per ordine */
+    padding-left: 20%; /* Li centra visivamente come blocco */
+  }
+  .logo {
+    position: relative !important; /* Toglie il posizionamento fisso */
+    top: 0 !important;
+    left: 0 !important;
+    width: 120px; /* Logo più piccolo per lasciare spazio */
+    margin-bottom: 15px;
+  }
+
+  /* Rimuoviamo il titolo H1 dall'header se è già scritto nella foto (Hero) 
+     per guadagnare spazio, oppure lo rimpiccioliamo */
+  header h1 {
+    display: none; /* Se vuoi tenerlo, usa: font-size: 1.2rem; margin: 10px 0; */
+  }
+
+.nav-desktop {
+    position: relative !important;
+    display: grid !important;
+    /* Crea 6 "fette" immaginarie per permetterci di centrare bene 2 o 3 elementi */
+    grid-template-columns: repeat(6, 1fr) !important; 
+    gap: 10px 15px !important; /* 10px spazio verticale, 15px orizzontale */
+    width: 100% !important;
+    max-width: 350px !important; /* Stringe il menu per farlo sembrare più compatto */
+    margin: 10px auto !important;
+    padding: 0 !important;
+  }
+
+  .nav-desktop a {
+    color: var(--primary) !important;
+    font-size: 1.1rem !important; /* Grandezza come richiesta */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    border: none !important;
+    background: none !important;
+    text-align: center !important;
+  }
+
+  /* POSIZIONAMENTO 2 SOPRA (Home e Servizi) */
+  /* Occupano 3 fette ciascuno (totale 6) */
+  .nav-desktop a:nth-child(1),
+  .nav-desktop a:nth-child(2) {
+    grid-column: span 3 !important;
+  }
+
+  /* POSIZIONAMENTO 3 SOTTO (FrmRacing, Gallery, Recensioni) */
+  /* Occupano 2 fette ciascuno (totale 6) */
+  .nav-desktop a:nth-child(3),
+  .nav-desktop a:nth-child(4),
+  .nav-desktop a:nth-child(5) {
+    grid-column: span 2 !important;
+    font-size: 0.9rem !important; /* Leggermente più piccoli per farli stare bene in tre */
+  }
+  /* Sistemiamo la Hero (l'immagine dell'auto) per non farla salire sopra */
+  .hero {
+    height: auto;
+    min-height: 250px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem; /* Il titolo giallo "AUTOFFICINA FORMICA" */
+    line-height: 1.2;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--primary);
+  }
+}
+/* Logo fisso in alto a sinistra */
+.logo {
+  position: absolute; /* Lo fissa alla finestra */
+  top: 70px; /* distanza dal bordo superiore */
+  left: 10px; /* distanza dal bordo sinistro */
+  width: 250px; /* puoi regolare la dimensione */
+  height: auto;
+  z-index: 1000; /* sopra tutti gli altri elementi */
+}
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.macchinari-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px; /* Aggiunto 20px per allinearlo a .info-section-full */
+  background: var(--black);
+  color: var(--black);
+  text-align: left;
+}
+.macchinari-section h2 {
+  border-left: 10px solid var(--primary);
+  padding-left: 20px;
+}
+
+.macchinari-intro {
+  max-width: 900px;
+  margin: 0 0 40px 0; /* Aggiunge 40px di spazio sotto il testo */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.macchinari-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.macchinario-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.macchinario-card:hover {
+  transform: translateY(-8px);
+}
+
+.macchinario-card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.macchinario-card h3 {
+  margin: 20px 15px 10px;
+  font-size: 1.4rem;
+  color: #f1c40f;
+}
+
+.macchinario-card p {
+  padding: 0 15px 25px;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* ===============================
+   ANIMAZIONI SCROLL
+   =============================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   MENU ORIZZONTALE VISIBILE
+   =============================== */
+.nav-desktop {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 70px; /* distanza tra le voci */
+  align-items: center;
+}
+
+.nav-desktop a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--white);
+  position: relative;
+}
+
+.nav-desktop a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-desktop a:hover::after {
+  width: 100%;
+}
