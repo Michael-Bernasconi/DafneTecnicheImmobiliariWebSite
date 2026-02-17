@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi Siamo - Dafne Tecniche Immobiliari</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+ <style>
+    /* Stili specifici per la sezione Team */
+    .team-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 0px 20px 60px 20px; /* Padding superiore azzerato */
+      background-color: #ffffff;
+      margin-top: 0px !important;
+    }
+
+    .team-member {
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .profile-circle {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 15px;
+      border: 5px solid var(--primary, #004a99);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+    }
+
+    .profile-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .team-member h3 {
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+      color: #333;
+      text-transform: uppercase;
+    }
+
+    .team-member p {
+      color: #666;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    /* Regolazione spazio storia per "attaccare" il testo alle foto */
+    .storia-centrata {
+      padding-bottom: 20px !important; 
+      margin-bottom: 20px !important;
+    }
+    
+    .storia-centrata p {
+      margin-bottom: 20px !important;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="img/Logo2.png" alt="Logo Dafne Tecniche Immobiliari" class="logo" />
+
+  <nav class="nav-desktop">
+    <a href="index.html">Home</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="chisiamo.html">Chi Siamo</a>
+    <a href="index.html#info">Contatti</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero-home reveal"
+    style="
+      background-image:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('img/banner2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 50vh; /* Altezza leggermente ridotta */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    "
+  >
+    <div class="hero-content-home">
+      <h1 style="
+        color: var(--primary);
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 10px;">
+        CHI SIAMO
+      </h1>
+    </div>
+  </section>
+
+  <div class="info-section-full storia-centrata reveal">
+    <h2 style="text-align:left; color: var(--primary); margin-bottom: 20px;">La Nostra Storia</h2>
+    <p>
+      <strong>* RICEVIAMO IL SABATO PREVIO APPUNTAMENTO *</strong><br><br>
+
+      Dafne Tecniche Immobiliari nasce dalla volontà di offrire un servizio che va oltre la semplice intermediazione. <br>
+      Ci troviamo a <strong>Solbiate con Cagno</strong>, dove operiamo come un'agenzia immobiliare a 360° con consolidata esperienza nel settore residenziale e commerciale.<br>
+
+      Siamo un team di professionisti che crede nella <strong>trasparenza</strong> e nell'<strong>eccellenza tecnica</strong>. <br>
+      Collaboriamo attivamente con imprese edili per la costruzione di immobili di nuova generazione, seguendo il cliente dalla progettazione fino alla consegna chiavi in mano. <br>
+      Ogni cliente per noi è unico e merita una consulenza su misura: se cercate un partner serio con una profonda conoscenza del territorio, siamo pronti a realizzare i vostri sogni immobiliari.
+    </p>
+  </div>
+
+  <section class="team-container reveal">
+    
+    <div class="team-member">
+      <div class="profile-circle">
+        <img src="img/dafne.jpg" alt="Dafne Pettine" />
+      </div>
+      <h3>Dafne Pettine</h3>
+      <p>Titolare / Agente Immobiliare</p>
+    </div>
+
+    <div class="team-member">
+      <div class="profile-circle">
+        <img src="img/tizi.jpg" alt="Tiziana Venturetti" />
+      </div>
+      <h3>Tiziana Venturetti</h3>
+      <p>Agente Immobiliare</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer style="text-align:center; padding:40px 20px; background-color: #fff;">
+  <p>Dafne Tecniche Immobiliari</p>
+  <p>© 2026 – Tutti i diritti riservati</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
