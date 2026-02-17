@@ -122,16 +122,15 @@ header h1 {
   gap: 20px;
   max-width: 1200px;
   margin: 50px auto 50px;
-  padding: 0 20px;
+  padding: 15px 15px;
 }
 
 .servizio-card {
   background: var(--primary);
   color: var(--black);
-  padding: 35px 25px;
+  padding: 15px 15px;
   border-radius: 15px;
   text-align: left;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .servizio-card i {
@@ -192,13 +191,13 @@ h2 {
 /* Contenitore principale per dare respiro */
 .info-section-full {
  max-width: 1200px;
-  margin: 60px auto;
+  margin: 60px auto 10px auto;
   padding: 0 20px; /* Questo deve essere identico per entrambi */
   box-sizing: border-box;/
 }
 
 .storia-centrata {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   line-height: 1.8; /* Aumenta l'interlinea per leggere meglio */
 }
 
