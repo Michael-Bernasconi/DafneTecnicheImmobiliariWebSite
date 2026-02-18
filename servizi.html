@@ -20,6 +20,7 @@
       color: var(--black);
       border-radius: 50%;
       margin-inline: auto;
+      transition: transform 0.3s ease;
     }
 
     .servizio-desc {
@@ -36,6 +37,11 @@
     
     h2 {
       margin-bottom: 50px !important;
+    }
+    @media (max-width: 768px) {
+      .valori-grid li {
+        width: 100% !important;
+      }
     }
   </style>
 </head>
@@ -109,7 +115,7 @@
   </div>
   <div class="servizio-card" style="flex: 1; min-width: 220px; max-width: 260px; text-align: center;">
     <i class="fas fa-file-contract"></i>
-    <h3>Assistenza</h3>
+    <h3>Assistenza Rogiti</h3>
     <p>Supporto burocratico completo fino alla firma del rogito.</p>
   </div>
 </section>

@@ -215,6 +215,7 @@ h2 {
 /* TABELLA ORARI */
 table {
   width: 100%;
+  border-collapse: collapse; /* Fondamentale per vedere i bordi correttamente */
   background: var(--black);
   border-radius: 12px;
 }
@@ -222,11 +223,19 @@ th {
   padding: 20px;
   font-size: 1.2rem;
   text-align: center; /* AGGIUNTO: centra l'intestazione */
+  border-bottom: 1px solid #333; /* Riga orizzontale grigio scuro */
+
+}
+/* RIGA VERTICALE DI DIVISIONE */
+th:first-child, 
+td:first-child {
+  border-right: 1px solid #333; /* Crea la linea verticale tra Giorni e Orari */
 }
 td {
   padding: 15px 20px;
   font-size: 1.1rem;
   text-align: center; /* AGGIUNTO: centra l'intestazione */
+  border-bottom: 1px solid #333; /* Riga orizzontale grigio scuro */
 }
 
 footer {
@@ -268,88 +277,94 @@ footer {
 
 /* MOBILE */
 @media (max-width: 768px) {
+  /* Header e Logo */
   header {
-    display: flex;
-    flex-direction: column; /* Mette gli elementi uno sotto l'altro */
-    align-items: center;
-    padding: 15px 5px;
-    height: auto !important; /* Toglie l'altezza fissa che taglia i bottoni */
-  }
-  .valori-grid {
-    gap: 20px;
-  }
-  .valori-grid li {
-    width: 100%; /* In mobile molto stretto, li mette uno sotto l'altro */
-    justify-content: flex-start; /* Li allinea a sinistra per ordine */
-    padding-left: 20%; /* Li centra visivamente come blocco */
+    padding: 15px 10px !important;
   }
   .logo {
-    position: relative !important; /* Toglie il posizionamento fisso */
+    position: relative !important;
     top: 0 !important;
     left: 0 !important;
-    width: 120px; /* Logo più piccolo per lasciare spazio */
-    margin-bottom: 15px;
+    width: 140px !important; /* Logo più proporzionato */
+    margin: 0 auto 15px auto !important;
   }
 
-  /* Rimuoviamo il titolo H1 dall'header se è già scritto nella foto (Hero) 
-     per guadagnare spazio, oppure lo rimpiccioliamo */
-  header h1 {
-    display: none; /* Se vuoi tenerlo, usa: font-size: 1.2rem; margin: 10px 0; */
-  }
-
-.nav-desktop {
+  /* Menu Mobile a Griglia */
+  .nav-desktop {
     position: relative !important;
     display: grid !important;
-    /* Crea 6 "fette" immaginarie per permetterci di centrare bene 2 o 3 elementi */
-    grid-template-columns: repeat(6, 1fr) !important; 
-    gap: 10px 15px !important; /* 10px spazio verticale, 15px orizzontale */
-    width: 100% !important;
-    max-width: 350px !important; /* Stringe il menu per farlo sembrare più compatto */
-    margin: 10px auto !important;
-    padding: 0 !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 colonne pulite */
+    gap: 10px !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    left: auto !important;
+    transform: none !important;
   }
-
   .nav-desktop a {
-    color: var(--primary) !important;
-    font-size: 1.1rem !important; /* Grandezza come richiesta */
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    text-decoration: none !important;
-    border: none !important;
-    background: none !important;
-    text-align: center !important;
+    font-size: 1rem !important;
+    padding: 5px 0;
   }
 
-  /* POSIZIONAMENTO 2 SOPRA (Home e Servizi) */
-  /* Occupano 3 fette ciascuno (totale 6) */
-  .nav-desktop a:nth-child(1),
-  .nav-desktop a:nth-child(2) {
-    grid-column: span 3 !important;
+  /* Hero (Titolo Giallo) */
+  .hero-home {
+    height: 45vh !important; /* Ridotto per mobile */
+  }
+  .hero-content-home h1 {
+    font-size: 1.8rem !important; /* Evita che il nome si spezzi in 4 righe */
+    padding: 0 10px;
   }
 
-  /* POSIZIONAMENTO 3 SOTTO (FrmRacing, Gallery, Recensioni) */
-  /* Occupano 2 fette ciascuno (totale 6) */
-  .nav-desktop a:nth-child(3),
-  .nav-desktop a:nth-child(4),
-  .nav-desktop a:nth-child(5) {
-    grid-column: span 2 !important;
-    font-size: 0.9rem !important; /* Leggermente più piccoli per farli stare bene in tre */
+  /* Slider Servizi (Le card gialle) */
+  .servizi-home {
+    justify-content: flex-start !important; /* Permette lo scroll da sinistra */
+    padding: 10px 20px !important;
+    gap: 15px !important;
   }
-  /* Sistemiamo la Hero (l'immagine dell'auto) per non farla salire sopra */
-  .hero {
-    height: auto;
-    min-height: 250px;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .servizio-card {
+    min-width: 190px !important; /* Dimensione ideale per mostrare l'inizio della successiva */
+    padding: 15px !important;
+  }
+  .servizio-card i {
+    font-size: 1.8rem !important;
   }
 
-  .hero h2 {
-    font-size: 1.6rem; /* Il titolo giallo "AUTOFFICINA FORMICA" */
-    line-height: 1.2;
-    margin-bottom: 10px;
-    border-left: 5px solid var(--primary);
+  /* Contatti (Icone gialle) */
+  .icon-circle {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.1rem !important;
+    margin-right: 12px !important;
+  }
+  .contatti-list li {
+    font-size: 1rem !important;
+  }
+
+  /* Tabella Orari (Risoluzione Righe/Colonne) */
+  /* Tabella Orari Ottimizzata per Mobile */
+  table {
+    display: table !important; /* Ripristina il comportamento tabella */
+    width: 100% !important;
+    border-collapse: collapse;
+    margin: 20px 0 !important;
+  }
+
+  th, td {
+    padding: 12px 5px !important; /* Padding ridotto per massimizzare lo spazio */
+    font-size: 0.85rem !important; 
+    line-height: 1.2 !important;
+    word-break: break-word; /* Spezza le parole se necessario */
+  }
+
+  /* Riduciamo leggermente la larghezza della prima colonna per dare spazio agli orari */
+  th:first-child, td:first-child {
+    width: 35% !important;
+    border-right: 1px solid #333;
+  }
+
+  /* Orari: gestiamo il separatore "|" se presente per non farlo andare a capo male */
+  td:last-child {
+    width: 65% !important;
+    font-weight: 500;
   }
 }
 /* Logo fisso in alto a sinistra */
