@@ -117,24 +117,33 @@ header h1 {
 }
 
 .servizi-home {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 50px auto 50px;
-  padding: 15px 15px;
+  display: flex;
+  justify-content: center; /* Centra il gruppo di card */
+  gap: 20px;               /* Spazio fisso tra le card */
+  flex-wrap: wrap;         /* Permette di andare a capo su mobile */
+  padding: 60px 20px;
 }
 
 .servizio-card {
   background: var(--primary);
   color: var(--black);
-  padding: 15px 15px;
+  padding: 25px 20px;
   border-radius: 15px;
-  text-align: left;
+  text-align: center;      /* Centra il testo internamente */
+  
+  /* Questo assicura che siano tutte uguali */
+  flex: 1;                 /* Le card crescono equamente */
+  min-width: 250px;        /* Non diventano più piccole di 250px */
+  max-width: 300px;        /* Non diventano più grandi di 300px */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .servizio-card i {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 15px;
 }
 
