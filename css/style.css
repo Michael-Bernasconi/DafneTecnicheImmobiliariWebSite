@@ -24,12 +24,12 @@ body {
 }
 
 a {
-  color: var(--white) !important;
-  text-decoration: none !important;
+  color: inherit;
+  text-decoration: none;
   transition: var(--transition);
 }
 a:hover {
-  color: var(--primary) !important;
+  color: var(--primary);
 }
 
 /* ==========================================================================
@@ -177,18 +177,33 @@ h2 {
   padding: 0 20px;
 }
 
-.contatti-list li {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
+/* ==========================================================================
+   SEZIONE CONTATTI & SOCIAL - ANIMAZIONI ED EFFETTI HOVER AVANZATI
+   ========================================================================== */
+
+.contatti-list {
   list-style: none;
-  display: flex;
-  align-items: center;
+  padding: 0;
 }
 
-.icon-circle {
+.contatti-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+/* Effetto scorrimento della riga a destra al passaggio del mouse */
+.contatti-list li:hover {
+  transform: translateX(12px);
+}
+
+/* Stile base del cerchio icona */
+.contatti-list .icon-circle {
   background: var(--primary);
   color: var(--black);
-  width: 55px; /* Ridotto da 75px */
+  width: 55px;
   height: 55px;
   border-radius: 50%;
   display: flex;
@@ -196,6 +211,89 @@ h2 {
   align-items: center;
   margin-right: 20px;
   font-size: 1.4rem;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.contatti-list li a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white) !important;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   EFFETTI HOVER SPECIFICI PER OGNI CONTATTO
+   ========================================================================== */
+
+/* 1. WHATSAPP (Verde Neon) */
+.contatti-list li:has(.fa-whatsapp):hover .icon-circle {
+  background: #25d366 !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+  transform: scale(1.1) rotate(10deg);
+}
+.contatti-list li:has(.fa-whatsapp):hover a {
+  color: #25d366 !important;
+}
+
+/* 2. VALUTAZIONE IMMOBILE / CALCOLATRICE (Glow Giallo) */
+.contatti-list li:has(.fa-calculator):hover .icon-circle {
+  background: var(--primary) !important;
+  color: var(--black) !important;
+  box-shadow: 0 0 25px var(--primary);
+  transform: scale(1.1) rotate(10deg);
+}
+
+/* 3. GOOGLE MAPS (Rosso Segnaposto) */
+.contatti-list li:has(.fa-map-marker-alt):hover .icon-circle {
+  background: #ea4335 !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(234, 67, 53, 0.5);
+}
+.contatti-list li:has(.fa-map-marker-alt):hover a {
+  color: #ea4335 !important;
+}
+
+/* 4. INSTAGRAM (Gradiente Ufficiale perfetto senza bordi tagliati) */
+.contatti-list li:has(.fa-instagram):hover .icon-circle {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  color: #fff !important;
+  border: none !important;
+  overflow: hidden !important;
+  box-shadow: 0 0 20px rgba(214, 36, 159, 0.6);
+  transform: scale(1.15) rotate(10deg);
+}
+
+/* 5. FACEBOOK (Blu Facebook) */
+.contatti-list li:has(.fa-facebook):hover .icon-circle {
+  background: #1877f2 !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(24, 119, 242, 0.5);
+}
+.contatti-list li:has(.fa-facebook):hover a {
+  color: #1877f2 !important;
+}
+
+/* 6. PORTALI IMMOBILIARI (Immobiliare, Idealista, Casa - Effetto Elegante Bianco/Scuro) */
+.contatti-list li:has(.fa-globe):hover .icon-circle,
+.contatti-list li:has(.fa-home):hover .icon-circle,
+.contatti-list li:has(.fa-building):hover .icon-circle {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Animazione di rimbalzo interna per l'icona */
+.contatti-list li:hover .icon-circle i {
+  animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px); }
 }
 /* Contenitore principale per dare respiro */
 .info-section-full {
@@ -440,3 +538,56 @@ footer {
 .nav-desktop a:hover::after {
   width: 100%;
 }
+
+
+  /* CONTENITORE FISSO IN ALTO A DESTRA (VERTICALE) */
+  .fixed-top-actions {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column; /* Dispone i bottoni uno sotto l'altro */
+    gap: 12px;              /* Spazio verticale tra i due bottoni */
+    align-items: center;
+  }
+
+    /* BOTTONE WHATSAPP (VERDE) */
+  .btn-fix-whatsapp {
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.25);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* BOTTONE VALUTAZIONE (GIALLO) */
+  .btn-fix-valutazione {
+    background-color: var(--primary, #f1c40f);
+    color: #1a1a1a;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.25);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+
+
+  /* Effetto Zoom al passaggio del mouse */
+  .btn-fix-valutazione:hover, .btn-fix-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 4px 18px rgba(0,0,0,0.35);
+  }
